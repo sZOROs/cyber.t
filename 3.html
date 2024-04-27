@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CYBER UTU</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+        }
+        .notes {
+            background-color: #222;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CYBER UTU</h1>
+        <div class="notes">
+            <h2>My Notes</h2>
+            <!-- Add your notes here -->
+        </div>
+        <div class="spot">
+            <h2>Spot</h2>
+            <!-- Add your spot content here -->
+        </div>
+        <div class="password">
+            <h2>Password Protected Area</h2>
+            <p>Please enter the password to access this area:</p>
+            <form action="/login" method="post">
+                <input type="password" name="password">
+                <input type="submit" value="Submit">
+            </form>
+            <?php
+            // Check if form is submitted
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                // Check if the submitted password matches the correct password
+                if ($_POST["password"] == "79107910") {
+                    // Redirect to the protected area or display content
+                    echo "<p style='color: green; text-align: center;'>Password is correct. Access granted!</p>";
+                } else {
+                    // Password is incorrect
+                    echo "<p style='color: red; text-align: center;'>Incorrect password. Please try again.</p>";
+                }
+            }
+            ?>
+        </div>
+    </div>
+    <footer>
+        <p style="text-align: center;">© 2024 CYBER UTU. All rights reserved.</p>
+    </footer>
+</body>
+</html>
